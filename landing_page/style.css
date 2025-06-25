@@ -1,0 +1,324 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2a2a2a;
+    --accent-color: #f39c12; /* Pomarańczowo-złoty akcent */
+    --accent-hover: #e67e22;
+    --text-light: #f5f5f5;
+    --text-medium: #a0a0a0;
+    --text-dark: #1a1a1a;
+    --border-color: #444;
+    --border-radius: 8px;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    --font-main: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.section-wrapper {
+    width: 100%;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-wrapper:last-of-type {
+    border-bottom: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header, .footer {
+    background-color: transparent;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+.header p {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.footer {
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+.footer p {
+    margin: 5px 0;
+}
+
+h2, h3 {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-section .video-placeholder {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 56.25%; /* 16:9 */
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.timer-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://silaispokoj.pl/wp-content/uploads/2024/12/hero2.png') no-repeat center center/cover;
+}
+
+.timer-section .countdown {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.countdown div {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: var(--text-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    min-width: 100px;
+    box-shadow: var(--shadow);
+}
+
+.countdown span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+.countdown div > span + span { /* The text like "Dni" */
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--text-medium);
+    margin-top: 10px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.offer-card {
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.2);
+    border-color: var(--accent-color);
+}
+
+.offer-card.popular {
+    border-color: var(--accent-color);
+    position: relative;
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.2);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.offer-card h3 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.offer-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+.offer-card .price del {
+    font-size: 1.5rem;
+    opacity: 0.6;
+    color: var(--text-medium);
+}
+
+.offer-card .old-price {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: var(--text-medium);
+}
+
+.offer-card .description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    min-height: 40px;
+    color: var(--text-medium);
+}
+
+.offer-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+    flex-grow: 1;
+    color: var(--text-light);
+}
+
+.offer-card li {
+    margin-bottom: 0.75rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.offer-card li::before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* Push button to the bottom if it's a direct child of the card */
+.offer-card > .btn {
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.contact-section {
+    text-align: center;
+    background: var(--secondary-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.contact-details .phone {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    display: block;
+    text-decoration: none;
+}
+.contact-details .phone:hover {
+    color: var(--accent-hover);
+}
+
+.termin-selector {
+    margin-top: auto; /* Pushes the whole block to the bottom */
+    padding-top: 1rem; /* Space above the "Wybierz termin" text */
+}
+
+.termin-selector p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.termin-selector .btn {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+}
+
+.termin-selector .btn:not(:last-child) {
+    margin-bottom: 0.75rem; /* Space between buttons */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .countdown {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .countdown div {
+        padding: 1rem;
+        min-width: 100%;
+    }
+} 

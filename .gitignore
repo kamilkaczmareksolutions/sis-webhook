@@ -1,0 +1,46 @@
+# --- Pliki środowiskowe, cache i specyficzne dla systemów/IDE ---
+# Dobre praktyki, które powinny być zawsze
+.env
+.env.*
+.venv
+venv
+env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+.idea/
+.cursor/
+*.swp
+.DS_Store
+Thumbs.db
+.vercel/
+
+# --- Logi, dane i wyniki skryptów (bardzo konkretnie) ---
+*.log
+*.csv
+*.zip
+*.jpg
+logs_result.json
+Logowanie_dla_Joli*.json
+SiS_maile_czerwiec_lipiec*.json
+Wypisz_z_SMS*.json
+brakujace_kontakty.txt
+
+# --- Skrypty pomocnicze i jednorazowe ---
+# Te pliki nie są częścią aplikacji wdrażanej na Vercel
+analyze_log_events.py
+backfill_from_csv.py
+calculate_scoring.py
+clean_data.py
+find_missing_contacts.py
+send_email_campaign.py
+send_sms_campaign.py
+send_test_emails.py
+send_test_sms.py
+send_to_missing.py
+
+# --- Foldery z plikami, które nie są częścią głównej aplikacji ---
+emails/
+sms/
