@@ -119,6 +119,8 @@ def update_notion_page(page_id, event_type, event_date_iso, template_id=None):
             column_to_update += '1'
         elif template_id == 7:
             column_to_update += '2'
+        elif template_id == 8:
+            column_to_update += '3'
 
     properties_to_update = {
         column_to_update: {"date": {"start": event_date_iso}}
