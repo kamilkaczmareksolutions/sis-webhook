@@ -44,3 +44,6 @@ send_to_missing.py
 # --- Foldery z plikami, które nie są częścią głównej aplikacji ---
 emails/
 sms/
+
+clear_notion_database.py
+process_notion_export.py
