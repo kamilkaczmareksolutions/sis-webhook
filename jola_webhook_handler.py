@@ -86,8 +86,19 @@ def create_contact_in_notion(contact_details):
         properties["FIRSTNAME"] = {"rich_text": [{"text": {"content": contact_details.get("firstname")}}]}
     if contact_details.get("lastname"):
         properties["LASTNAME"] = {"rich_text": [{"text": {"content": contact_details.get("lastname")}}]}
-    if contact_details.get("phone"):
-         properties["SMS"] = {"phone_number": contact_details.get("phone")}
+    
+    phone_number = contact_details.get("phone")
+    if phone_number:
+        # Upewnij się, że numer telefonu ma prawidłowy format międzynarodowy
+        if not phone_number.startswith('+'):
+            cleaned_number = phone_number.replace(" ", "").replace("-", "")
+            # Jeśli to 9-cyfrowy polski numer, dodaj +48
+            if len(cleaned_number) == 9 and cleaned_number.isdigit():
+                phone_number = f"+48{cleaned_number}"
+            # W przeciwnym razie, po prostu dodaj +
+            else:
+                phone_number = f"+{cleaned_number}"
+        properties["SMS"] = {"phone_number": phone_number}
 
     new_page_data = {
         "parent": {"database_id": NOTION_DATABASE_ID},
