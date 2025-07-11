@@ -26,18 +26,6 @@
             </section>
         </div>
 
-        <div class="section-wrapper timer-section">
-            <div class="container">
-                <h2>Twoja specjalna cena przepada za:</h2>
-                <div id="countdown" class="countdown">
-                    <div><span id="days"></span><span>Dni</span></div>
-                    <div><span id="hours"></span><span>Godzin</span></div>
-                    <div><span id="minutes"></span><span>Minut</span></div>
-                    <div><span id="seconds"></span><span>Sekund</span></div>
-                </div>
-            </div>
-        </section>
-
         <div class="section-wrapper">
              <section class="container video-section">
                 <h3>Zobacz, co mówią osoby, które już odnalazły swoją drogę:</h3>
@@ -75,8 +63,7 @@
                             <li>Piotrków Trybunalski</li>
                         </ul>
                         <div class="termin-selector">
-                            <p><strong>Wybierz termin:</strong></p>
-                            <a href="https://app.easycart.pl/checkout/jb-kademia/jednodniowy-program-sila-i-spokoj" class="btn" target="_blank">Najbliższy dostępny</a>
+                            <p><strong>Najbliższy termin:</strong></p>
                             <a href="https://app.easycart.pl/checkout/jb-kademia/jednodniowy-program-sila-i-spokoj-02082025" class="btn" target="_blank">2 sierpnia 2025</a>
                         </div>
                     </div>
@@ -112,31 +99,6 @@
     <footer class="footer">
         <p>&copy; 2025 Siła i Spokój. Wszelkie prawa zastrzeżone.</p>
     </footer>
-
-    <script>
-        const countdown = () => {
-            const countDate = new Date('July 13, 2025 23:59:59').getTime();
-            const now = new Date().getTime();
-            const gap = countDate - now;
-
-            const second = 1000;
-            const minute = second * 60;
-            const hour = minute * 60;
-            const day = hour * 24;
-
-            const textDay = Math.floor(gap / day);
-            const textHour = Math.floor((gap % day) / hour);
-            const textMinute = Math.floor((gap % hour) / minute);
-            const textSecond = Math.floor((gap % minute) / second);
-
-            document.getElementById('days').innerText = textDay > 0 ? textDay : '0';
-            document.getElementById('hours').innerText = textHour > 0 ? textHour : '0';
-            document.getElementById('minutes').innerText = textMinute > 0 ? textMinute : '0';
-            document.getElementById('seconds').innerText = textSecond > 0 ? textSecond : '0';
-        };
-
-        setInterval(countdown, 1000);
-    </script>
 
 </body>
 </html> 
