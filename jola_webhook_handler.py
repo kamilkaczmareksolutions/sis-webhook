@@ -245,6 +245,14 @@ def webhook_handler():
         email = event_data.get("email")
         template_id = event_data.get("template_id")
 
+        # --- Bramka weryfikacyjna dla ID szablonu ---
+        # Lista dozwolonych ID szablonów dla kampanii "Siła i Spokój"
+        SIS_TEMPLATE_IDS = {6, 7, 8, 9, 10}
+
+        # Jeśli zdarzenie nie ma ID szablonu LUB ID nie pasuje do tej kampanii, ignoruj.
+        if not template_id or template_id not in SIS_TEMPLATE_IDS:
+            continue
+
         if not event_type or not email:
             continue
 
